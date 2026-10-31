@@ -17,7 +17,10 @@
   p, li { margin: 6px 0; }
   ul { padding-left: 20px; }
   .meta { color: var(--muted); font-size: .95rem; margin-bottom: 28px; }
-  .lang { display: inline-block; margin-right: 12px; color: var(--accent); text-decoration: none; }
+  .langs { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; margin-bottom: 8px; }
+  .lang { appearance: none; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: .95rem; padding: 6px 14px; min-height: 36px; border-radius: 999px; cursor: pointer; }
+  .lang[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  section[hidden] { display: none; }
   .note { background: color-mix(in srgb, var(--accent) 8%, var(--paper)); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 6px; }
   table { border-collapse: collapse; width: 100%; font-size: .95rem; }
   th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--rule); vertical-align: top; }
@@ -27,7 +30,10 @@
 </head>
 <body>
 <main>
-  <p><a class="lang" href="#ko">한국어</a><a class="lang" href="#en">English</a></p>
+  <div class="langs" role="group" aria-label="Language">
+    <button class="lang" type="button" data-lang="ko" aria-pressed="true" lang="ko">한국어</button>
+    <button class="lang" type="button" data-lang="en" aria-pressed="false" lang="en">English</button>
+  </div>
 
   <section id="ko">
     <h1>Dayta 개인정보 처리방침</h1>
@@ -143,5 +149,24 @@
 
   <footer>© 2026 Kyeongtak Kim · Dayta</footer>
 </main>
+<script>
+(function () {
+  var sections = { ko: document.getElementById('ko'), en: document.getElementById('en') };
+  var buttons = document.querySelectorAll('.lang');
+  function show(lang) {
+    Object.keys(sections).forEach(function (k) { sections[k].hidden = k !== lang; });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    document.documentElement.lang = lang;
+    document.title = lang === 'ko' ? 'Dayta 개인정보 처리방침' : 'Dayta Privacy Policy';
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var fromHash = location.hash === '#en' ? 'en' : location.hash === '#ko' ? 'ko' : null;
+  var fromBrowser = (navigator.language || '').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en';
+  show(fromHash || saved || fromBrowser);
+  buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.lang); }); });
+})();
+</script>
 </body>
 </html>
