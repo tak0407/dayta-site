@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dayta 개인정보 처리방침</title>
+<meta name="description" content="Dayta 앱의 개인정보 처리방침 · Dayta Privacy Policy">
+<style>
+  :root { --ink: #1c1c1e; --muted: #6e6e73; --paper: #ffffff; --rule: #e5e5ea; --accent: #16875a; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #f2f2f7; --muted: #a1a1a6; --paper: #000000; --rule: #2c2c2e; --accent: #3fbf8a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", system-ui, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 96px; }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 40px 0 8px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1.02rem; margin: 20px 0 4px; }
+  p, li { margin: 6px 0; }
+  ul { padding-left: 20px; }
+  .meta { color: var(--muted); font-size: .95rem; margin-bottom: 28px; }
+  .lang { display: inline-block; margin-right: 12px; color: var(--accent); text-decoration: none; }
+  .note { background: color-mix(in srgb, var(--accent) 8%, var(--paper)); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  a { color: var(--accent); }
+  footer { color: var(--muted); font-size: .9rem; margin-top: 56px; }
+</style>
+</head>
+<body>
+<main>
+  <p><a class="lang" href="#ko">한국어</a><a class="lang" href="#en">English</a></p>
+
+  <section id="ko">
+    <h1>Dayta 개인정보 처리방침</h1>
+    <p class="meta">시행일 2026년 10월 31일 · 개발자 Kyeongtak Kim</p>
+
+    <p class="note">Dayta는 하루를 계획하고, 실행하고, 기록하는 앱입니다. 사용자의 데이터는 <strong>기기 안</strong>과 <strong>사용자 본인의 iCloud·캘린더 계정</strong>에만 저장됩니다. 개발자는 서버를 운영하지 않으며, 어떤 개인정보도 수집·전송·판매하지 않습니다. 광고와 추적 SDK도 없습니다.</p>
+
+    <h2>1. 수집하지 않는 것</h2>
+    <p>Dayta는 개발자 서버로 데이터를 보내지 않습니다. 계정 가입이 없고, 분석 도구나 광고 식별자를 쓰지 않습니다. 앱이 다루는 모든 정보는 아래에 적힌 대로 사용자의 기기와 사용자의 Apple 계정(iCloud) 안에 머뭅니다.</p>
+
+    <h2>2. 앱이 다루는 정보와 쓰임</h2>
+    <table>
+      <tr><th>정보</th><th>어디에 쓰이나</th><th>어디에 저장되나</th></tr>
+      <tr><td>할일, 루틴, 계획, 기록 한 건</td><td>앱의 핵심 기능</td><td>기기, 그리고 사용자의 iCloud(비공개 데이터베이스)로 기기 간 동기화</td></tr>
+      <tr><td>캘린더·미리알림 (EventKit)</td><td>일정과 미리알림을 읽어 타임라인에 보여 주고, 계획과 기록을 일정으로 남깁니다</td><td>사용자의 캘린더·미리알림 계정 (iCloud, Google 등 사용자가 고른 계정)</td></tr>
+      <tr><td>건강 데이터 (HealthKit: 수면, 운동)</td><td>사용자가 <strong>설정 › 기록 › 자동 기록</strong>을 켠 경우에만 읽습니다. 수면과 운동의 시간·종류 요약을 사용자가 고른 캘린더에 일정으로 남깁니다</td><td>사용자가 고른 캘린더. HealthKit에 쓰지 않으며, 개발자에게 전송되지 않습니다</td></tr>
+      <tr><td>위치</td><td>사용자가 <strong>장소 기록</strong>을 켠 경우에만. 등록한 장소의 출입과 머문 곳을 일정으로 남기기 위해 「항상 허용」이 필요합니다</td><td>등록한 장소와 기록 상태는 기기에, 기록된 방문은 사용자의 캘린더에</td></tr>
+      <tr><td>동작 (CoreMotion)</td><td>장소 기록이 켜진 경우, 이동 중인지 머무는 중인지 판정하는 데만 씁니다</td><td>기기에서 처리, 저장하지 않음</td></tr>
+      <tr><td>사진 (카메라·사진 보관함)</td><td>사진으로 할일을 만들 때</td><td>할일 데이터와 함께 기기와 사용자의 iCloud</td></tr>
+      <tr><td>알림</td><td>계획 시작과 밤 1분 알림</td><td>기기에서 예약</td></tr>
+    </table>
+
+    <h3>건강 데이터에 대한 약속</h3>
+    <ul>
+      <li>HealthKit에서 읽은 데이터는 광고, 마케팅, 데이터 중개 등 어떤 목적으로도 제3자에게 제공하지 않습니다.</li>
+      <li>개발자의 서버나 개발자가 관리하는 iCloud 데이터베이스에 건강 데이터를 저장하지 않습니다. 사용자가 고른 캘린더에 사용자가 선택해서 남기는 요약 일정만 생깁니다.</li>
+      <li>자동 기록은 언제든 설정에서 끌 수 있고, 끄면 더 이상 읽지 않습니다.</li>
+    </ul>
+
+    <h3>위치에 대한 약속</h3>
+    <ul>
+      <li>위치는 사용자가 등록한 장소 안팎을 판단하고 머문 시간을 기록하는 데만 씁니다.</li>
+      <li>위치 이력을 개발자에게 보내지 않으며, 기기 밖으로는 사용자의 캘린더에 남는 방문 기록만 나갑니다.</li>
+    </ul>
+
+    <h2>3. 기기 내 처리</h2>
+    <p>수신함 AI 분류와 계획 캘린더 추천은 Apple Intelligence가 제공되는 기기에서 Apple의 기기 내 모델로 처리됩니다. 입력한 내용은 기기를 떠나지 않습니다.</p>
+
+    <h2>4. 동기화와 제3자</h2>
+    <p>기기 간 동기화는 Apple iCloud(CloudKit 비공개 데이터베이스와 iCloud 키-값 저장소)를 통해서만 이루어지며, Apple의 <a href="https://www.apple.com/kr/legal/privacy/">개인정보 처리방침</a>이 적용됩니다. 개발자는 사용자의 iCloud 데이터에 접근할 수 없습니다. 그 밖의 제3자 서비스는 없습니다.</p>
+
+    <h2>5. 결제</h2>
+    <p>앱 내 구독이나 구입이 제공되는 경우 결제는 Apple의 App Store가 처리합니다. 개발자는 카드 번호 등 결제 정보를 받지 않습니다.</p>
+
+    <h2>6. 보관과 삭제</h2>
+    <p>데이터는 사용자가 지울 때까지 사용자의 기기와 iCloud에 남습니다. 앱 안에서 항목을 지우거나, 앱을 삭제하고 iOS 설정 › Apple 계정 › iCloud에서 Dayta 데이터를 지우면 됩니다. 캘린더에 남긴 일정은 캘린더 앱에서 지울 수 있습니다.</p>
+
+    <h2>7. 아동</h2>
+    <p>Dayta는 만 13세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
+
+    <h2>8. 변경</h2>
+    <p>이 방침이 바뀌면 이 페이지에 시행일과 함께 갱신합니다.</p>
+
+    <h2>9. 문의</h2>
+    <p>개인정보 관련 문의: <a href="mailto:tak9447@gmail.com">tak9447@gmail.com</a></p>
+  </section>
+
+  <section id="en">
+    <h1>Dayta Privacy Policy</h1>
+    <p class="meta">Effective October 31, 2026 · Developer: Kyeongtak Kim</p>
+
+    <p class="note">Dayta helps you plan your day, do it, and record it. Your data lives <strong>on your device</strong> and in <strong>your own iCloud and calendar accounts</strong>. The developer runs no server and does not collect, transmit, or sell any personal data. There are no ads and no tracking SDKs.</p>
+
+    <h2>1. What we don't collect</h2>
+    <p>Dayta sends nothing to the developer. There is no account sign-up, no analytics, and no advertising identifier. Everything the app handles stays on your device and in your Apple account (iCloud), as described below.</p>
+
+    <h2>2. Data the app handles</h2>
+    <table>
+      <tr><th>Data</th><th>Used for</th><th>Stored in</th></tr>
+      <tr><td>To-dos, routines, plans, records</td><td>The app's core features</td><td>Your device, synced between your devices through your iCloud private database</td></tr>
+      <tr><td>Calendars and Reminders (EventKit)</td><td>Showing events and reminders on the timeline; saving plans and records as events</td><td>Your calendar and reminder accounts (iCloud, Google, or others you choose)</td></tr>
+      <tr><td>Health data (HealthKit: sleep, workouts)</td><td>Read only if you turn on <strong>Settings › Records › Automatic recording</strong>. Summaries of sleep and workout time and type are saved as events in a calendar you choose</td><td>The calendar you choose. Never written to HealthKit; never sent to the developer</td></tr>
+      <tr><td>Location</td><td>Only if you turn on place recording. "Always" permission is needed to log arrivals, departures, and stays at places you registered while the app is closed</td><td>Registered places and recording state on your device; visits as events in your calendar</td></tr>
+      <tr><td>Motion (CoreMotion)</td><td>With place recording on, to tell moving from staying</td><td>Processed on device, not stored</td></tr>
+      <tr><td>Photos (camera, photo library)</td><td>Making a to-do from a photo</td><td>With your to-do data, on device and in your iCloud</td></tr>
+      <tr><td>Notifications</td><td>Plan start and nightly planning reminders</td><td>Scheduled on device</td></tr>
+    </table>
+
+    <h3>Health data commitments</h3>
+    <ul>
+      <li>Data read from HealthKit is never shared with third parties for advertising, marketing, data brokering, or any other purpose.</li>
+      <li>Health data is never stored on a developer server or in a developer-managed iCloud database. Only the summary events you choose to keep are written to the calendar you pick.</li>
+      <li>Automatic recording can be turned off at any time in Settings; once off, nothing further is read.</li>
+    </ul>
+
+    <h3>Location commitments</h3>
+    <ul>
+      <li>Location is used only to tell whether you are at a place you registered and to record how long you stayed.</li>
+      <li>No location history is sent to the developer; the only thing that leaves the device is the visit event saved in your own calendar.</li>
+    </ul>
+
+    <h2>3. On-device processing</h2>
+    <p>Inbox AI sorting and plan calendar suggestions run with Apple's on-device models on devices that support Apple Intelligence. Your text never leaves the device.</p>
+
+    <h2>4. Sync and third parties</h2>
+    <p>Sync between your devices happens only through Apple iCloud (CloudKit private database and iCloud key-value storage), governed by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. The developer cannot access your iCloud data. There are no other third-party services.</p>
+
+    <h2>5. Payments</h2>
+    <p>If in-app subscriptions or purchases are offered, Apple's App Store handles payment. The developer never receives card numbers or other payment details.</p>
+
+    <h2>6. Retention and deletion</h2>
+    <p>Your data stays on your device and in your iCloud until you delete it. Delete items in the app, or delete the app and remove Dayta's data in iOS Settings › Apple Account › iCloud. Events saved to a calendar can be deleted in the Calendar app.</p>
+
+    <h2>7. Children</h2>
+    <p>Dayta is not directed at children under 13 and does not knowingly collect personal information from children.</p>
+
+    <h2>8. Changes</h2>
+    <p>Changes to this policy are posted on this page with a new effective date.</p>
+
+    <h2>9. Contact</h2>
+    <p>Privacy questions: <a href="mailto:tak9447@gmail.com">tak9447@gmail.com</a></p>
+  </section>
+
+  <footer>© 2026 Kyeongtak Kim · Dayta</footer>
+</main>
+</body>
+</html>
